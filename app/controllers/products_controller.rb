@@ -10,4 +10,15 @@ class ProductsController < ApplicationController
 
     render json: product
   end
+
+  def create
+    product = Product.create(
+      name: params[:name],
+      price: params[:price],
+      description: params[:description]
+    )
+
+    render json: product
+  end
+  
 end
